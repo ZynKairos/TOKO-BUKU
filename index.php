@@ -1,5 +1,8 @@
 <?php
 require "config.php";
+
+$buku = mysqli_query($connect, "SELECT * FROM buku");
+
 ?>
 
 <!DOCTYPE html>

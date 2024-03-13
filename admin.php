@@ -1,3 +1,10 @@
+<?php
+
+require "config.php";
+
+  $buku = mysqli_query($connect, "SELECT * FROM buku");
+?>
+
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -302,11 +309,7 @@
                                             <tbody>
                                                 <tr>
                                                     <?php
-                                                    foreach ($buku as $buku) {
-                                                        $id = $buku['id'];
-                                                        $query = "SELECT penerbit.penerbit, buku.* FROM buku
-                                                        INNER JOIN penerbit ON buku.penerbit_id=penerbit.id WHERE penerbit_id";
-                                                    }
+                                                    foreach ($buku as $buku) {                                                       
                                                     ?>
                                                     <td class="serial">1.</td>
                                                     <td class="avatar">
@@ -324,6 +327,9 @@
                                                         <a href="#" class="btn icon btn-warning"><i class="fa fa-pencil"></i></a>
                                                         <a href="#" class="btn icon btn-danger"><i class="fa fa-trash"></i></a>
                                                     </td>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 </tr>                                                
                                             </tbody>
                                         </table>
